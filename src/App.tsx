@@ -1,13 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider, useAuth } from './contexts/AuthContext';
+import { useAuth } from './context/AuthContext';
+import { MainProvider } from './context/MainContext';
 import MainLayout from './layouts/MainLayout';
-import AuthLayout from './layouts/AuthLayout';
+// import AuthLayout from './layouts/AuthLayout';
 import Home from './pages/public/Home';
-import Login from './pages/public/Login';
-import Register from './pages/public/Register';
-import Dashboard from './pages/private/Dashboard';
-import Profile from './pages/private/Profile';
+// import Login from './pages/public/Login';
+// import Register from './pages/public/Register';
+// import Dashboard from './pages/private/Dashboard';
+// import Profile from './pages/private/Profile';
 import './App.css';
 
 // Private route guard component
@@ -19,7 +20,7 @@ const PrivateRoute: React.FC<{ element: JSX.Element }> = ({ element }) => {
 function App() {
   return (
     <BrowserRouter>
-      <AuthProvider>
+      <MainProvider>
         <Routes>
           {/* Public routes */}
           <Route path="/" element={<MainLayout />}>
@@ -40,7 +41,7 @@ function App() {
             />
           </Route>
         </Routes>
-      </AuthProvider>
+      </MainProvider>
     </BrowserRouter>
   );
 }

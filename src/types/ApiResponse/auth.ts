@@ -71,14 +71,3 @@ export namespace APIAuth  {
   export type User = ApiResponse<SafeUser>;
   export type OAuth = ApiResponse<OAuthResponseData>;
 }
-
-// ===================Controller Response Data Types ===================
-
-export namespace CntrAuth  {
-  export type Register = RegisterResponseData;
-  export type Login = LoginResponseData;
-  export type Verification = VerificationResponseData;
-  export type Logout = LogoutResponseData;
-  export type User = SafeUser;
-  export type OAuth = OAuthResponseData;
-}
