@@ -1,3 +1,3 @@
-export { APIAddress as Address } from "./address";
-export { APIProfile as Profile } from "./profile";
+export type { APIAddress as Address } from "./address";
+export type { APIProfile as Profile } from "./profile";
 

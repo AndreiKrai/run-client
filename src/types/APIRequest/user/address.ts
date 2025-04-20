@@ -1,4 +1,4 @@
-import { User } from '../../db';
+// import { User } from '../../db';
 export namespace Address {
   /**
    * Get all addresses for a user
@@ -33,7 +33,8 @@ export namespace Address {
       isPrimary?: boolean;
       label?: string;     // Custom label
     };
-    user: User;
+    user: any;
+    // user: User;
   }
 
   /**

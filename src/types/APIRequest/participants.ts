@@ -1,14 +1,15 @@
-import { 
-  ParticipantFiltersQuery, 
-  CreateParticipantBody, 
-  UpdateParticipantBody, 
-  RegisterBody,
-  UpdateRegistrationBody
-} from "../../schemas/partisipant";
+// import { 
+//   ParticipantFiltersQuery, 
+//   CreateParticipantBody, 
+//   UpdateParticipantBody, 
+//   RegisterBody,
+//   UpdateRegistrationBody
+// } from "../../schemas/partisipant";
 
   // Get all participants with filtering
-  export interface GetAll {
-    query?: ParticipantFiltersQuery;
+  export interface GetAll {    query?: any;
+
+    //query?: ParticipantFiltersQuery;
   }
 
   // Get a single participant
@@ -23,7 +24,8 @@ import {
     params: {
       id: string;
     };
-    query?: Omit<ParticipantFiltersQuery, 'eventId'>;
+    query?:any;
+    // query?: Omit<ParticipantFiltersQuery, 'eventId'>;
   }
 
   // Get participants for a category
@@ -31,12 +33,14 @@ import {
     params: {
       id: string;
     };
-    query?: Omit<ParticipantFiltersQuery, 'categoryId'>;
+    query?:any;
+    //query?: Omit<ParticipantFiltersQuery, 'categoryId'>;
   }
 
   // Create a new participant (admin)
   export interface Create {
-    body: CreateParticipantBody & {
+    body: any & {
+    //body: CreateParticipantBody & {
       userId: number;
     };
   }
@@ -46,7 +50,8 @@ import {
     params: {
       id: string; // Event ID
     };
-    body: RegisterBody;
+    body: any
+    //body: RegisterBody;
   }
 
   // Update a participant (admin)
@@ -54,7 +59,8 @@ import {
     params: {
       id: string;
     };
-    body: UpdateParticipantBody;
+    body: any
+   // body: UpdateParticipantBody;
   }
 
   // Update registration (user)
@@ -62,7 +68,8 @@ import {
     params: {
       id: string; // Participant ID
     };
-    body: UpdateRegistrationBody;
+    body: any
+    //body: UpdateRegistrationBody;
   }
 
   // Cancel registration (admin)

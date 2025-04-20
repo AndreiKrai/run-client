@@ -1,2 +1,2 @@
-export { CntrProfile as Profile } from "./profile";
-export { CntrAddress as Address } from "./address";
+export type { CntrProfile as Profile } from "./profile";
+export type { CntrAddress as Address } from "./address";

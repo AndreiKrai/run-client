@@ -1,7 +1,8 @@
-import { EventFiltersQuery } from "../../schemas/events";
+// import { EventFiltersQuery } from "../../schemas/events";
 
   export interface GetAll {
-    query?: EventFiltersQuery;
+    query?: any;
+    //query?: EventFiltersQuery;
   }
 
   // Get a single event
