@@ -1,0 +1,104 @@
+
+/* src/components/Modal/Modal.css */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+  padding: 16px;
+}
+
+.modal-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-closed {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  width: 550px;
+  max-height: 90vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transform-origin: center center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal-content-open {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal-content-closed {
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  z-index: 10;
+}
+
+.modal-close-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.modal-content {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 480px) {
+  .modal-container {
+    width: 100%;
+    max-width: 100%;
+    max-height: 90vh;
+    margin: 0;
+    border-radius: 8px;
+  }
+  
+  /* Bottom sheet style for mobile */
+  .modal-backdrop {
+    align-items: flex-end;
+    padding: 0;
+  }
+  
+  .modal-content-open {
+    transform: translateY(0);
+  }
+  
+  .modal-content-closed {
+    transform: translateY(100%);
+  }
+}

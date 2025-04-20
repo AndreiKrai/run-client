@@ -1,6 +1,6 @@
 import { createContext, useContext, ReactNode, useMemo } from "react";
 import { AuthProvider } from "./AuthContext";
-
+import { ModalProvider } from "./ModalContext";
 // Create context
 export const MainContext = createContext({});
 type Props = {
@@ -11,7 +11,9 @@ export const MainProvider = ({ children }: Props) => {
 
   return (
     <MainContext.Provider value={value}>
-      <AuthProvider>{children}</AuthProvider>
+      <AuthProvider>
+        <ModalProvider>{children}</ModalProvider>
+      </AuthProvider>
     </MainContext.Provider>
   );
 };
